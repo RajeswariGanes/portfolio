@@ -1,366 +1,620 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Rajeswari Ganesan | Java Backend Developer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:Arial, Helvetica, sans-serif;
-    }
+<title>Rajeswari Ganesan | Java Backend Developer</title>
 
-    body{
-      background:#0f172a;
-      color:white;
-      line-height:1.6;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    header{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:40px;
-      background:linear-gradient(135deg,#0f172a,#1e293b);
-    }
+<style>
 
-    .hero{
-      max-width:1200px;
-      width:100%;
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:50px;
-      align-items:center;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+}
+
+/* NAVBAR */
+
+nav{
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    background:rgba(15,23,42,0.95);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid #1e293b;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color:#38bdf8;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#38bdf8;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:120px 8% 60px;
+}
+
+.hero-container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+    width:100%;
+    max-width:1300px;
+}
+
+.hero-text h3{
+    color:#38bdf8;
+    margin-bottom:20px;
+    font-size:22px;
+}
+
+.hero-text h1{
+    font-size:72px;
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+.hero-text h2{
+    color:#cbd5e1;
+    font-size:32px;
+    margin-bottom:25px;
+}
+
+.hero-text p{
+    color:#94a3b8;
+    line-height:1.9;
+    margin-bottom:40px;
+    font-size:18px;
+}
+
+.buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.btn{
+    padding:15px 32px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.primary-btn{
+    background:#38bdf8;
+    color:black;
+}
+
+.primary-btn:hover{
+    background:white;
+}
+
+.secondary-btn{
+    border:2px solid #38bdf8;
+    color:white;
+}
+
+.secondary-btn:hover{
+    background:#38bdf8;
+    color:black;
+}
+
+.hero-image{
+    display:flex;
+    justify-content:center;
+}
+
+.circle{
+    width:380px;
+    height:380px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#38bdf8,#2563eb);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:100px;
+    font-weight:700;
+    box-shadow:0 0 60px rgba(56,189,248,0.5);
+}
+
+/* SECTION */
+
+section{
+    padding:100px 8%;
+}
+
+.section-title{
+    font-size:48px;
+    color:#38bdf8;
+    margin-bottom:60px;
+    text-align:center;
+}
+
+/* SKILLS */
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:25px;
+}
+
+.skill-card{
+    background:#1e293b;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    transition:0.3s;
+    border:1px solid #334155;
+}
+
+.skill-card:hover{
+    transform:translateY(-8px);
+    border-color:#38bdf8;
+}
+
+.skill-card h4{
+    font-size:20px;
+}
+
+/* EXPERIENCE */
+
+.timeline{
+    position:relative;
+    max-width:1000px;
+    margin:auto;
+}
+
+.timeline::after{
+    content:'';
+    position:absolute;
+    width:4px;
+    background:#38bdf8;
+    top:0;
+    bottom:0;
+    left:50%;
+    margin-left:-2px;
+}
+
+.timeline-item{
+    padding:20px 40px;
+    position:relative;
+    width:50%;
+}
+
+.timeline-item::after{
+    content:'';
+    position:absolute;
+    width:25px;
+    height:25px;
+    right:-14px;
+    background:#38bdf8;
+    border-radius:50%;
+    top:25px;
+}
+
+.left{
+    left:0;
+}
+
+.right{
+    left:50%;
+}
+
+.right::after{
+    left:-12px;
+}
+
+.timeline-content{
+    background:#1e293b;
+    padding:30px;
+    border-radius:20px;
+    border:1px solid #334155;
+}
+
+.timeline-content h3{
+    color:#38bdf8;
+    margin-bottom:10px;
+}
+
+.timeline-content span{
+    color:#94a3b8;
+    display:block;
+    margin-bottom:15px;
+}
+
+.timeline-content p{
+    color:#cbd5e1;
+    line-height:1.8;
+}
+
+/* PROJECTS */
+
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.project-card{
+    background:#1e293b;
+    padding:35px;
+    border-radius:25px;
+    border:1px solid #334155;
+    transition:0.3s;
+}
+
+.project-card:hover{
+    transform:translateY(-8px);
+    border-color:#38bdf8;
+}
+
+.project-card h3{
+    color:#38bdf8;
+    margin-bottom:20px;
+}
+
+.project-card p{
+    color:#cbd5e1;
+    line-height:1.8;
+}
+
+/* CONTACT */
+
+.contact-box{
+    background:linear-gradient(135deg,#38bdf8,#2563eb);
+    padding:70px;
+    border-radius:35px;
+    text-align:center;
+}
+
+.contact-box h2{
+    font-size:48px;
+    margin-bottom:20px;
+}
+
+.contact-box p{
+    font-size:20px;
+    margin-bottom:40px;
+}
+
+/* FOOTER */
+
+footer{
+    padding:40px;
+    text-align:center;
+    color:#94a3b8;
+    border-top:1px solid #1e293b;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .hero-container{
+        grid-template-columns:1fr;
+        text-align:center;
     }
 
     .hero-text h1{
-      font-size:60px;
-      margin-bottom:20px;
-      color:#38bdf8;
+        font-size:52px;
     }
 
     .hero-text h2{
-      font-size:30px;
-      margin-bottom:20px;
+        font-size:26px;
     }
 
-    .hero-text p{
-      color:#cbd5e1;
-      margin-bottom:30px;
-      font-size:18px;
-    }
-
-    .btn{
-      display:inline-block;
-      padding:14px 28px;
-      background:#38bdf8;
-      color:black;
-      text-decoration:none;
-      border-radius:10px;
-      margin-right:15px;
-      font-weight:bold;
-      transition:0.3s;
-    }
-
-    .btn:hover{
-      background:white;
-    }
-
-    .profile{
-      display:flex;
-      justify-content:center;
+    .buttons{
+        justify-content:center;
     }
 
     .circle{
-      width:320px;
-      height:320px;
-      border-radius:50%;
-      background:linear-gradient(135deg,#38bdf8,#2563eb);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:80px;
-      font-weight:bold;
-      box-shadow:0 0 40px rgba(56,189,248,0.4);
+        width:260px;
+        height:260px;
+        font-size:70px;
     }
 
-    section{
-      padding:80px 10%;
+    .timeline::after{
+        left:20px;
     }
 
-    h3.section-title{
-      font-size:40px;
-      margin-bottom:40px;
-      color:#38bdf8;
+    .timeline-item{
+        width:100%;
+        padding-left:70px;
+        padding-right:20px;
     }
 
-    .skills{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-      gap:20px;
+    .timeline-item::after{
+        left:8px;
     }
 
-    .skill-card{
-      background:#1e293b;
-      padding:20px;
-      border-radius:15px;
-      text-align:center;
-      border:1px solid #334155;
-      transition:0.3s;
+    .right{
+        left:0;
     }
 
-    .skill-card:hover{
-      transform:translateY(-5px);
-      border-color:#38bdf8;
+    nav ul{
+        display:none;
     }
 
-    .experience-card,
-    .project-card{
-      background:#1e293b;
-      padding:30px;
-      border-radius:20px;
-      margin-bottom:30px;
-      border:1px solid #334155;
-    }
+}
 
-    .experience-card h4,
-    .project-card h4{
-      color:#38bdf8;
-      font-size:28px;
-      margin-bottom:10px;
-    }
+</style>
 
-    .experience-card span{
-      color:#94a3b8;
-    }
-
-    ul{
-      margin-top:15px;
-      padding-left:20px;
-    }
-
-    li{
-      margin-bottom:10px;
-      color:#cbd5e1;
-    }
-
-    .projects{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-      gap:30px;
-    }
-
-    .contact{
-      text-align:center;
-      background:linear-gradient(135deg,#38bdf8,#2563eb);
-      border-radius:30px;
-      padding:60px;
-      color:white;
-    }
-
-    footer{
-      text-align:center;
-      padding:30px;
-      color:#94a3b8;
-      border-top:1px solid #334155;
-    }
-
-    @media(max-width:768px){
-
-      .hero{
-        grid-template-columns:1fr;
-        text-align:center;
-      }
-
-      .hero-text h1{
-        font-size:45px;
-      }
-
-      .hero-text h2{
-        font-size:24px;
-      }
-
-      .circle{
-        width:220px;
-        height:220px;
-        font-size:60px;
-      }
-    }
-
-  </style>
 </head>
 
 <body>
 
-<header>
-  <div class="hero">
+<!-- NAVBAR -->
 
-    <div class="hero-text">
-      <h1>Rajeswari Ganesan</h1>
+<nav>
 
-      <h2>Java Backend Developer | Tech Lead</h2>
+<div class="logo">RG</div>
 
-      <p>
-        Experienced IT Backend Developer with 10+ years of expertise in
-        Java, Spring Boot, REST APIs, Kafka, Spring Security,
-        Microservices, Docker, and Kubernetes.
-      </p>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
 
-      <a class="btn" href="https://github.com/dashboard" target="_blank">
-        GitHub
-      </a>
-	  
+</nav>
 
-<a class="btn" href="https://www.linkedin.com/in/rajeswari-ganesan-me/" target="_blank">
-  LinkedIn
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="hero-container">
+
+<div class="hero-text">
+
+<h3>Hello, I'm</h3>
+
+<h1>Rajeswari Ganesan</h1>
+
+<h2>Java Backend Developer | Tech Lead</h2>
+
+<p>
+Experienced IT Backend Developer with 10+ years of experience
+in Java/J2EE, Spring Boot, REST APIs, Kafka, Microservices,
+Docker, Kubernetes, and enterprise backend application development.
+Passionate about scalable architectures and secure API systems.
+</p>
+
+<div class="buttons">
+
+<a href="https://github.com/rajeswariganes" target="_blank" class="btn primary-btn">
+GitHub
 </a>
 
-<a class="btn" href="resume.pdf" target="_blank">
-  Resume
+<a href="https://www.linkedin.com/in/rajeswari-ganesan-me/" target="_blank" class="btn secondary-btn">
+LinkedIn
 </a>
 
+<a href="resume.pdf" target="_blank" class="btn secondary-btn">
+Resume
+</a>
 
+<a href="mailto:rajeswariganesan2024@gmail.com" class="btn secondary-btn">
+Contact
+</a>
 
-      
-    </div>
+</div>
 
-    <div class="profile">
-      <div class="circle">RG</div>
-    </div>
+</div>
 
-  </div>
-</header>
+<div class="hero-image">
 
-<section>
+<div class="circle">
+RG
+</div>
 
-  <h3 class="section-title">Technical Skills</h3>
+</div>
 
-  <div class="skills">
-
-    <div class="skill-card">Core Java</div>
-    <div class="skill-card">Java 8</div>
-    <div class="skill-card">REST API</div>
-    <div class="skill-card">Kafka</div>
-    <div class="skill-card">Spring Boot</div>
-    <div class="skill-card">Spring Security</div>
-    <div class="skill-card">Chordiant</div>
-    <div class="skill-card">Docker</div>
-    <div class="skill-card">Kubernetes</div>
-    <div class="skill-card">Microservices</div>
-    <div class="skill-card">Jenkins</div>
-    <div class="skill-card">Git</div>
-
-  </div>
+</div>
 
 </section>
 
-<section>
+<!-- SKILLS -->
 
-  <h3 class="section-title">Professional Experience</h3>
+<section id="skills">
 
-  <div class="experience-card">
+<h2 class="section-title">Technical Skills</h2>
 
-    <h4>Tech Lead - Tech Mahindra</h4>
-    <span>Aug 2024 – Present | Chennai</span>
+<div class="skills-grid">
 
-    <ul>
-      <li>Designed and developed enterprise AEM dealer portal applications.</li>
-      <li>Integrated DPS REST APIs for real-time data exchange.</li>
-      <li>Led backend development team and performed code reviews.</li>
-      <li>Improved performance and platform stability.</li>
-    </ul>
+<div class="skill-card"><h4>Core Java</h4></div>
+<div class="skill-card"><h4>Java 8</h4></div>
+<div class="skill-card"><h4>REST API</h4></div>
+<div class="skill-card"><h4>Kafka</h4></div>
+<div class="skill-card"><h4>Spring Boot</h4></div>
+<div class="skill-card"><h4>Spring Security</h4></div>
+<div class="skill-card"><h4>Chordiant</h4></div>
+<div class="skill-card"><h4>Docker</h4></div>
+<div class="skill-card"><h4>Kubernetes</h4></div>
+<div class="skill-card"><h4>Microservices</h4></div>
+<div class="skill-card"><h4>Jenkins</h4></div>
+<div class="skill-card"><h4>Git</h4></div>
 
-  </div>
-
-  <div class="experience-card">
-
-    <h4>Senior System Analyst - IBM</h4>
-    <span>Jul 2022 – Apr 2023 | Bangalore</span>
-
-    <ul>
-      <li>Developed banking applications using Java 8 and Spring Boot.</li>
-      <li>Worked with Docker, Kubernetes, and Keycloak authentication.</li>
-      <li>Participated in Agile ceremonies and mentoring sessions.</li>
-    </ul>
-
-  </div>
-
-  <div class="experience-card">
-
-    <h4>Senior Associate Consultant - Infosys</h4>
-    <span>Jul 2021 – Jun 2022 | Bangalore</span>
-
-    <ul>
-      <li>Developed backend services for RDKB gateway devices.</li>
-      <li>Worked on Docker, Kubernetes, SQL, and Java applications.</li>
-      <li>Handled SIT/UAT issue tracking and deployment support.</li>
-    </ul>
-
-  </div>
+</div>
 
 </section>
 
-<section>
+<!-- EXPERIENCE -->
 
-  <h3 class="section-title">Projects</h3>
+<section id="experience">
 
-  <div class="projects">
+<h2 class="section-title">Professional Experience</h2>
 
-    <div class="project-card">
-      <h4>Enterprise REST API Platform</h4>
+<div class="timeline">
 
-      <p>
-        Developed scalable enterprise REST APIs using Spring Boot and
-        Microservices architecture.
-      </p>
-    </div>
+<div class="timeline-item left">
+<div class="timeline-content">
+<h3>Tech Lead - Tech Mahindra</h3>
+<span>Aug 2024 – Present</span>
+<p>
+Designed and developed enterprise dealer portal applications,
+implemented REST APIs, role-based security, and led backend development teams.
+</p>
+</div>
+</div>
 
-    <div class="project-card">
-      <h4>Kafka Event Streaming System</h4>
+<div class="timeline-item right">
+<div class="timeline-content">
+<h3>Senior System Analyst - IBM</h3>
+<span>Jul 2022 – Apr 2023</span>
+<p>
+Developed banking applications using Java 8, Spring Boot,
+Docker, Kubernetes, and Keycloak authentication systems.
+</p>
+</div>
+</div>
 
-      <p>
-        Built asynchronous event-driven backend systems using Kafka and Java.
-      </p>
-    </div>
+<div class="timeline-item left">
+<div class="timeline-content">
+<h3>Senior Associate Consultant - Infosys</h3>
+<span>Jul 2021 – Jun 2022</span>
+<p>
+Built backend services and enterprise APIs for RDKB gateway devices using Java and Spring Boot.
+</p>
+</div>
+</div>
 
-    <div class="project-card">
-      <h4>Secure Authentication Platform</h4>
+<div class="timeline-item right">
+<div class="timeline-content">
+<h3>System Engineer - TCS</h3>
+<span>Jul 2014 – Jul 2021</span>
+<p>
+Worked on enterprise credit and trading applications with Java,
+JSF, Spring Boot, production support, and deployments.
+</p>
+</div>
+</div>
 
-      <p>
-        Implemented authentication and authorization using Spring Security.
-      </p>
-    </div>
-
-  </div>
+</div>
 
 </section>
 
-<section>
+<!-- PROJECTS -->
 
-  <div class="contact">
+<section id="projects">
 
-    <h3 style="font-size:42px;margin-bottom:20px;">
-      Let's Connect
-    </h3>
+<h2 class="section-title">Backend Projects</h2>
 
-    <p style="font-size:20px;margin-bottom:30px;">
-      Open for Java Backend Developer and Tech Lead opportunities.
-    </p>
+<div class="projects-grid">
 
-    <a class="btn" href="mailto:rajeswariganesan2024@gmail.com">
-      Email Me
-    </a>
+<div class="project-card">
+<h3>Enterprise REST API Platform</h3>
 
-  </div>
+<p>
+Built scalable enterprise REST APIs using Spring Boot and Microservices architecture.
+Implemented authentication, logging, and performance optimization.
+</p>
+
+</div>
+
+<div class="project-card">
+
+<h3>Kafka Event Streaming System</h3>
+
+<p>
+Developed asynchronous event-driven backend services using Kafka and Java for high-volume processing.
+</p>
+
+</div>
+
+<div class="project-card">
+
+<h3>Secure Authentication Platform</h3>
+
+<p>
+Implemented enterprise-grade authentication and authorization using Spring Security and RBAC concepts.
+</p>
+
+</div>
+
+</div>
 
 </section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="contact-box">
+
+<h2>Let's Connect</h2>
+
+<p>
+Open for Java Backend Developer, Tech Lead,
+and Backend Engineering opportunities.
+</p>
+
+<div class="buttons" style="justify-content:center;">
+
+<a href="mailto:rajeswariganesan2024@gmail.com" class="btn primary-btn">
+Email Me
+</a>
+
+<a href="https://github.com/rajeswariganes" target="_blank" class="btn secondary-btn">
+GitHub
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
 
 <footer>
-  © 2026 Rajeswari Ganesan | Java Backend Developer Portfolio
+
+© 2026 Rajeswari Ganesan | Java Backend Developer Portfolio
+
 </footer>
 
 </body>
